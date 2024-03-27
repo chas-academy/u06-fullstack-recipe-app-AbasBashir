@@ -11,7 +11,7 @@ export class AuthService {
   private confirmationMessage: string = "";
   private loggedIn = false;
   private token :string =" ";
-  private baseURL = 'http://127.0.0.1:8000/api/';
+  private baseURL = 'https://u06-fullstack-recipe-app-abasbashir.onrender.com/api/';
 
   private httpOptions = {
     headers: new HttpHeaders({
