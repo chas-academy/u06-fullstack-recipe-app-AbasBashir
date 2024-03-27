@@ -1,0 +1,36 @@
+  <header class="relative mx-auto p-6 bg-slate-800 text-white">
+        <input type="checkbox" id="menu-checkbox" class="hidden">
+        <div id="nav-container" class="flex items-center sm:justify-between">
+            <a href="#" class="text-3xl">Recipes App</a>
+            <nav id="nav-menu" class="hidden px-1 py-1 lg:block lg:text-lg w-fit">
+                <ul class="flex justify-end gap-x-12 text-xl">
+                    <li><a routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="mr-5 hover:text-white">Recipes</a></li>
+                    <li><a routerLink="/mealtime" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="mr-5 hover:text-white">Meal Customizer</a></li>
+                    <li><a routerLink="/advanced-filters" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="mr-5 hover:text-white">Advanced Filters</a></li>
+                    @if(authService.isLoggedIn()){
+                        <li><button class="text-white hover:text-gray-300" (click)="logout()" class="relative mr-5 hover:text-white">Logout</button></li>
+                    }
+
+                    @if(!authService.isLoggedIn()){
+                        <li><a routerLink="/login" class="relative mr-5 hover:text-white">Login</a></li>
+                    }
+                </ul>
+            </nav>
+        </div>
+        
+        <nav id="menu"  class="absolute text-black bg-slate-200 w-full left-0 top-24 -mt-4 z-50 rounded-r-md lg:hidden">
+            <ul class="flex justify-between font-bold border-l-4 border-yellow-400 overflow-x-scroll">
+                <div class="flex text-lg">
+                    <li><a routerLink="/home" class="mr-5 hover:text-red-400 inline-block py-2 w-full px-5">Recipes</a></li>
+                    <li><a routerLink="/mealtime" class="mr-5 hover:text-red-400 inline-block py-2 min-w-[200px] px-5">Meal Customizer</a></li>
+                    <li><a routerLink="/advanced-filters" class="mr-5 hover:text-red-400 inline-block py-2 min-w-[200px] px-5">Advanced Filters</a></li>
+                    @if(authService.isLoggedIn()){
+                        <li><a (click)="logout()" class="relative top-2 mr-5 hover:text-white">Logout</a></li>
+                    }
+                    @if(!authService.isLoggedIn()){
+                        <li><a routerLink="/login" class="relative top-2 mr-5 hover:text-white">Login</a></li>
+                    }
+                </div>
+            </ul>
+        </nav>
+</header>
