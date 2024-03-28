@@ -14,7 +14,7 @@ export class RecipesService {
   constructor(private http: HttpClient) { }
 
   fetchRecipes(): Observable<any>{ 
-    return this.http.get(`${this.BASE_URL}/complexSearch?number=100&apiKey=${this.key}`);
+    return this.http.get(`${this.BASE_URL}/complexSearch?random=true&number=100&apiKey=${this.key}`);
   }
 
   fetchSpecificRecipe(id: string): Observable<any>{
