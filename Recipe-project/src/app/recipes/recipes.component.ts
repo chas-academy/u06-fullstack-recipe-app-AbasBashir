@@ -26,7 +26,7 @@ export class RecipesComponent implements OnInit{
   // ------------------------------------------------------------------------API
   fetchRecipes(): void {
     this.recipesService.fetchRecipes().subscribe((recipes: any) => {
-      this.recipes = recipes.results;
+      this.recipes = recipes.recipes;
     });
   }
 }

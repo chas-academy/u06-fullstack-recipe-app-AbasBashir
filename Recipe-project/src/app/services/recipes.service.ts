@@ -7,14 +7,14 @@ import { Observable } from 'rxjs';
 })
 export class RecipesService {
 
-  private key: string = 'b3b2f3bbbeb84eb08d3ef179d355d541';
+  private key: string = '866d2aee211e427db6be0d18fe3bc360';
   private BASE_URL: string = 'https://api.spoonacular.com/recipes';
 
 
   constructor(private http: HttpClient) { }
 
   fetchRecipes(): Observable<any>{ 
-    return this.http.get(`${this.BASE_URL}/random&number=100&apiKey=${this.key}`);
+    return this.http.get(`${this.BASE_URL}/random?number=100&apiKey=${this.key}`);
   }
 
   fetchSpecificRecipe(id: string): Observable<any>{

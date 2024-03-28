@@ -4,15 +4,15 @@
             <a href="#" class="text-3xl">Recipes App</a>
             <nav id="nav-menu" class="hidden px-1 py-1 lg:block lg:text-lg w-fit">
                 <ul class="flex justify-end gap-x-12 text-xl">
-                    <li><a routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="mr-5 hover:text-white">Recipes</a></li>
-                    <li><a routerLink="/mealtime" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="mr-5 hover:text-white">Meal Customizer</a></li>
-                    <li><a routerLink="/advanced-filters" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="mr-5 hover:text-white">Advanced Filters</a></li>
+                    <li><a routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="mr-5 hover:text-red-400">Recipes</a></li>
+                    <li><a routerLink="/mealtime" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="mr-5 hover:text-red-400">Meal Customizer</a></li>
+                    <li><a routerLink="/advanced-filters" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="mr-5 hover:text-red-400">Advanced Filters</a></li>
                     @if(authService.isLoggedIn()){
-                        <li><button class="text-white hover:text-gray-300" (click)="logout()" class="relative mr-5 hover:text-white">Logout</button></li>
+                        <li><button class="text-white hover:text-gray-300" (click)="logout()" class="relative mr-5 hover:text-red-400">Logout</button></li>
                     }
 
                     @if(!authService.isLoggedIn()){
-                        <li><a routerLink="/login" class="relative mr-5 hover:text-white">Login</a></li>
+                        <li><a routerLink="/login" class="relative mr-5 hover:text-red-400">Login</a></li>
                     }
                 </ul>
             </nav>
